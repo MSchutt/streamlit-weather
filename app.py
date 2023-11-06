@@ -243,7 +243,7 @@ df_station = pd.read_csv("station_metadata.csv")
 df.columns = [x.strip() for x in df.columns]
 
 st.write("""
-         # Willkommen bei ihrem persönlichen Wetter-Zuhause Finder!
+         # Willkommen bei Ihrem persönlichen Wetter-Zuhause Finder!
          Egal, ob Sie nach Sonnenstunden, Temperatur, Wind, Niederschlag oder Höhenmetern suchen, wir helfen Ihnen dabei, den Ort mit den optimalen Bedingungen zu ermitteln. Lassen Sie uns gemeinsam Ihren persönlichen Wetterort finden!
          """)
 
@@ -309,7 +309,6 @@ def convert_to_weight_factor(weight_factor_labels):
 st.write("""
          ---
          
-         Bitte wählen Sie jeweils aus den Optionen aus, wie wichtig Ihnen die jeweiligen Kriterien sind.
          ### Wie wichtig ist mir...
          """)
 
@@ -352,7 +351,7 @@ df_result[display_cols_df] = df_result[display_cols_df].round(2)
 st.dataframe(df_result[display_cols_df].rename(columns=rename_cols).head(15), use_container_width=False, hide_index=True)
 
 st.write("""
-         Hier ist ihr Wetter-Zuhause auf der Karte markiert:
+         Hier ist Ihr Wetter-Zuhause auf der Karte markiert:
          """)
 
 st.map(map_df.head(1), latitude="lat",longitude="lon", zoom=6, size=5000, color="#fcba03")
